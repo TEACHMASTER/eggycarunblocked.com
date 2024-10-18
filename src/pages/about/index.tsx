@@ -14,11 +14,7 @@ const Home: React.FC = () => {
       </Head>
 
       <Layout>
-        <Navbar />
-        <main>
-          <HeroSection />
-        </main>
-        <Footer />
+        <HeroSection />
       </Layout>
     </>
   );

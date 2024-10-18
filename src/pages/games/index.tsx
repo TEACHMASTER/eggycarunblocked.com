@@ -1,9 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
 import Layout from '@/components/Layout';
-import Navbar from '@/components/Navbar';
 import HeroSection from '@/components/HeroSection';
-import Footer from '@/components/Footer';
 
 const Home: React.FC = () => {
   return (
@@ -14,11 +12,7 @@ const Home: React.FC = () => {
       </Head>
 
       <Layout>
-        <Navbar />
-        <main>
-          <HeroSection />
-        </main>
-        <Footer />
+        <HeroSection />
       </Layout>
     </>
   );

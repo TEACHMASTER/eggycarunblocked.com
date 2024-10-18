@@ -59,11 +59,7 @@ const GameDetail: React.FC = () => {
       </Head>
 
       <Layout>
-        <Navbar />
-        <main>
-          <Game game={ game} />
-        </main>
-        <Footer />
+        <Game game={ game} />
       </Layout>
     </Fragment>
   );
