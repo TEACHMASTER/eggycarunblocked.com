@@ -2,7 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ['webglmath.github.io','example.com'],
+    domains: ['webglmath.github.io','example.com','github.com'],
   },
 }
 
