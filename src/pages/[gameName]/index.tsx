@@ -1,68 +1,74 @@
 import React, { Fragment } from 'react';
-import { useRouter } from 'next/router';
-import Link from 'next/link';
-import Head from 'next/head';
-
-import Layout from '@/components/Layout';
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
-import Game from '@/components/Game';
-
-interface Game {
-  id: number;
+import GameIframe from '@/components/GameIframe';
+import ArticleList from '@/components/ArticleList';
+const GameName: React.FC = () => {
+interface Article {
+  id: string;
   title: string;
+  excerpt: string;
   imageUrl: string;
-  genre: string;
-  url: string;
+  author: string;
+  date: string;
 }
+// 示例文章数据
+const articles: Article[] = [
+  {
+    id: '1',
+    title: '10个提高游戏体验的小技巧',
+    excerpt: '想要在游戏中获得更好的体验？这里有10个实用的小技巧，让你的游戏之旅更加愉快。',
+    imageUrl: 'https://example.com/images/gaming-tips.jpg',
+    author: '游戏达人',
+    date: '2023-06-01'
+  },
+  {
+    id: '2',
+    title: '最新游戏发布：《星际探险》',
+    excerpt: '《星际探险》终于发布了！这款备受期待的太空探索游戏将带你踏上一段惊心动魄的宇宙之旅。',
+    imageUrl: 'https://example.com/images/space-adventure.jpg',
+    author: '游戏评论家',
+    date: '2023-05-28'
+  },
+  {
+    id: '3',
+    title: '经典游戏回顾：《超级马里奥》',
+    excerpt: '让我们一起回顾这款改变了整个游戏行业的经典之作，探索它为何至今仍然深受玩家喜爱。',
+    imageUrl: 'https://example.com/images/mario-retrospective.jpg',
+    author: '怀旧游戏爱好者',
+    date: '2023-05-25'
+  },
 
-const games: Game[] = [
-  { id: 1, title: "Space Explorer", imageUrl: "/images/space-explorer.jpg", genre: "Adventure", url: "https://webglmath.github.io/eggy-car/" },
-  { id: 2, title: "Medieval Quest", imageUrl: "/images/medieval-quest.jpg", genre: "RPG", url: "https://webglmath.github.io/eggy-car/" },
-  { id: 3, title: "Cyber Racer", imageUrl: "/images/cyber-racer.jpg", genre: "Racing", url: "https://webglmath.github.io/eggy-car/" },
-  { id: 4, title: "Puzzle Master", imageUrl: "/images/puzzle-master.jpg", genre: "Puzzle", url: "https://webglmath.github.io/eggy-car/" },
-];
-
-const GameDetail: React.FC = () => {
-  const router = useRouter();
-  const { gameName } = router.query;
-
-  const game = games.find((g) => g.title === gameName);
-
-  if (!game) {
-    return (
-      <div className="container mx-auto px-4 py-8">
-        <Head>
-          <title>Game Not Found | Epic Game Hub</title>
-          <meta name="description" content="The requested game could not be found." />
-        </Head>
-        <h1 className="text-3xl font-bold mb-6 text-red-600">Game not found</h1>
-        <Link
-          href="/"
-          className="text-blue-600 hover:underline focus:outline-none focus:ring-2 focus:ring-blue-500 rounded"
-          tabIndex={0}
-          role="button"
-          aria-label="Return to game list"
-        >
-          Back to game list
-        </Link>
-      </div>
-    );
+  {
+    id: '3',
+    title: '经典游戏回顾：《超级马里奥》',
+    excerpt: '让我们一起回顾这款改变了整个游戏行业的经典之作，探索它为何至今仍然深受玩家喜爱。',
+    imageUrl: 'https://example.com/images/mario-retrospective.jpg',
+    author: '怀旧游戏爱好者',
+    date: '2023-05-25'
+  },
+  {
+    id: '3',
+    title: '经典游戏回顾：《超级马里奥》',
+    excerpt: '让我们一起回顾这款改变了整个游戏行业的经典之作，探索它为何至今仍然深受玩家喜爱。',
+    imageUrl: 'https://example.com/images/mario-retrospective.jpg',
+    author: '怀旧游戏爱好者',
+    date: '2023-05-25'
+  },
+  {
+    id: '3',
+    title: '经典游戏回顾：《超级马里奥》',
+    excerpt: '让我们一起回顾这款改变了整个游戏行业的经典之作，探索它为何至今仍然深受玩家喜爱。',
+    imageUrl: 'https://example.com/images/mario-retrospective.jpg',
+    author: '怀旧游戏爱好者',
+    date: '2023-05-25'
   }
-
+];
+  
   return (
     <Fragment>
-
-      <Head>
-        <title>{`${game.title} | Epic Game Hub`}</title>
-        <meta name="description" content={`Play ${game.title}, a ${game.genre} game on Epic Game Hub.`} />
-      </Head>
-
-      <Layout>
-        <Game game={ game} />
-      </Layout>
+      <GameIframe src="https://webglmath.github.io/eggy-car/" title="Game Title" logoSrc="https://webglmath.github.io/eggy-car/logo.png" />
+      <ArticleList articles={articles} />
     </Fragment>
   );
 };
 
-export default GameDetail;
+export default GameName;

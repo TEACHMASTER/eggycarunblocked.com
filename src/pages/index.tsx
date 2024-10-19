@@ -1,20 +1,24 @@
-import React from 'react';
-import Head from 'next/head';
-import Layout from '@/components/Layout';
-import HeroSection from '@/components/HeroSection';
-
+import React, { Fragment } from 'react';
+import GameIframe from '../components/GameIframe';
+import ArticleList from '../components/ArticleList';
 const Home: React.FC = () => {
+interface Article {
+  id: string;
+  title: string;
+  excerpt: string;
+  imageUrl: string; 
+  author: string;
+  date: string;
+}
+// 示例文章数据
+const articles: Article[] = [
+];
+  
   return (
-    <>
-      <Head>
-        <title>Epic Game Hub | Your Gateway to Gaming Adventures</title>
-        <meta name="description" content="Discover and play the latest and greatest games on Epic Game Hub. Your one-stop destination for all things gaming." />
-      </Head>
-
-      <Layout>
-        <HeroSection />
-      </Layout>
-    </>
+    <Fragment>
+      <GameIframe src="https://webglmath.github.io/eggy-car/" title="Game Title" logoSrc="https://webglmath.github.io/eggy-car/logo.png" />
+      <ArticleList articles={articles} />
+    </Fragment>
   );
 };
 

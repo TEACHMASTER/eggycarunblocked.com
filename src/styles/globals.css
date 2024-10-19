@@ -25,3 +25,8 @@ body {
     text-wrap: balance;
   }
 }
+
+/* 在你的全局CSS文件中 */
+.overflow-hidden::-webkit-scrollbar {
+  display: none;
+}
