@@ -1,7 +1,6 @@
 import React, { Fragment } from 'react';
 import GameIframe from '../components/GameIframe';
 import ArticleList from '../components/ArticleList';
-import LovePhotoWall from '../components/LovePhotoWall';
 
 const Home: React.FC = () => {
 interface Article {
@@ -20,9 +19,8 @@ interface Article {
   
   return (
     <Fragment>
-      {/* <GameIframe src="https://webglmath.github.io/eggy-car/" title="Game Title" logoSrc="https://webglmath.github.io/eggy-car/logo.png" />
-      <ArticleList articles={articles} /> */}
-      <LovePhotoWall />
+      <GameIframe src="https://webglmath.github.io/eggy-car/" title="Game Title" logoSrc="https://webglmath.github.io/eggy-car/logo.png" />
+      <ArticleList articles={articles} />
     </Fragment>
   );
 };
