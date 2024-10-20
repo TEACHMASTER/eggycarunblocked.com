@@ -19,7 +19,7 @@ interface Article {
   
   return (
     <Fragment>
-      <GameIframe src="https://webglmath.github.io/eggy-car/" title="Game Title" logoSrc="https://webglmath.github.io/eggy-car/logo.png" />
+      <GameIframe src="https://webglmath.github.io/eggy-car/" title="Game Title" logoSrc="/eggy-car.png" />
       <ArticleList articles={articles} />
     </Fragment>
   );
