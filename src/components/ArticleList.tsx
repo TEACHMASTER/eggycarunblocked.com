@@ -21,18 +21,10 @@ const ArticleList: React.FC<ArticleListProps> = ({ articles }) => {
     const scrollContainer = scrollRef.current;
     if (!scrollContainer) return;
 
-    let scrollAmount = 0;
-    const step = 1;
-    const gap = 24; // This should match the gap in your CSS (space-x-6 = 1.5rem = 24px)
-
     const scroll = () => {
-      scrollContainer.scrollTo({
-        left: scrollAmount,
-        behavior: 'auto'
-      });
-      scrollAmount += step;
-      if (scrollAmount >= scrollContainer.scrollWidth - scrollContainer.clientWidth) {
-        scrollAmount = 0;
+      scrollContainer.scrollLeft += 1;
+      if (scrollContainer.scrollLeft >= scrollContainer.scrollWidth / 2) {
+        scrollContainer.scrollLeft = 0;
       }
       requestAnimationFrame(scroll);
     };
@@ -43,8 +35,8 @@ const ArticleList: React.FC<ArticleListProps> = ({ articles }) => {
   }, []);
 
   return (
-    <div ref={scrollRef} className="w-full overflow-hidden">
-      <div className="flex space-x-6 p-6 animate-scroll">
+    <div ref={scrollRef} className="w-full overflow-x-hidden">
+      <div className="flex space-x-6 p-6 w-max">
         {articles.concat(articles).map((article, index) => (
           <ArticleCard
             key={`${article.id}-${index}`}

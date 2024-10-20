@@ -49,7 +49,7 @@ const GameIframe: React.FC<GameIframeProps> = ({ src, title, logoSrc }) => {
   };
 
   return (
-    <div className="flex justify-center">
+    <div className="flex justify-center isolate">
       <div ref={containerRef} className="relative w-3/4 h-0 pb-[45%]">
         {!showIframe ? (
           <div className="absolute inset-0 flex flex-col items-center justify-center bg-gray-100">
