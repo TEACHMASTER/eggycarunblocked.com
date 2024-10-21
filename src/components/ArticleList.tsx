@@ -30,18 +30,15 @@ const ArticleList: React.FC<ArticleListProps> = ({ articles }) => {
     };
 
     let animation:number
-    if (articles.length > 4) { 
-      animation = requestAnimationFrame(scroll);
-      articles = articles.concat(articles);
-    }
+    animation = requestAnimationFrame(scroll);
 
     return () => cancelAnimationFrame(animation);
   }, []);
 
   return (
-    <div ref={scrollRef} className="w-full overflow-x-hidden">
+    <div ref={scrollRef} className="w-3/4 mx-auto rounded-lg shadow-md overflow-x-hidden">
       <div className="flex space-x-6 p-6 w-max">
-        {articles.map((article, index) => (
+        {articles.concat(articles).map((article, index) => (
           <ArticleCard
             key={`${article.id}-${index}`}
             title={article.title}
