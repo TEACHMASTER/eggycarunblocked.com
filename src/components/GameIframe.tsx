@@ -55,7 +55,7 @@ const GameIframe: React.FC<GameIframeProps> = ({ src, title, logoSrc }) => {
           <div className="absolute inset-0 flex flex-col items-center justify-center bg-gray-100">
             <Image
               src={logoSrc}
-              alt="Game Logo"
+              alt={title}
               width={100}
               height={100}
               className="mb-3"
@@ -86,6 +86,7 @@ const GameIframe: React.FC<GameIframeProps> = ({ src, title, logoSrc }) => {
               title={title}
               className={`absolute top-0 left-0 w-full h-full border-0 ${isFullscreen ? 'z-50' : ''}`}
               allowFullScreen
+              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; fullscreen"
               onLoad={handleLoad}
               onError={handleError}
             />
@@ -93,7 +94,7 @@ const GameIframe: React.FC<GameIframeProps> = ({ src, title, logoSrc }) => {
               <div className="flex items-center space-x-2">
                 <Image
                   src={logoSrc}
-                  alt="Game Logo"
+                  alt={ title}
                   width={24}
                   height={24}
                   className="rounded-full"

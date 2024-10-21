@@ -30,3 +30,6 @@ body {
 .overflow-hidden::-webkit-scrollbar {
   display: none;
 }
+iframe {
+  will-change: transform;
+}
