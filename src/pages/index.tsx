@@ -3,7 +3,6 @@ import Head from 'next/head';
 import GameIframe from '../components/GameIframe';
 import {Article,Game } from '../data/Data';
 import EggyCarDescription from '../components/EggyCarDescription';
-import useSWR from 'swr';
 
 
 const Home: React.FC<{ game: Game }> = (props) => {
