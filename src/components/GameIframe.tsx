@@ -2,14 +2,9 @@
 
 import React, { useState, useRef, useEffect } from 'react';
 import Image from 'next/image';
+import { Game } from '../data/Data';
 
-interface GameIframeProps {
-  src: string;
-  title: string;
-  logoSrc: string;
-}
-
-const GameIframe: React.FC<GameIframeProps> = ({ src, title, logoSrc }) => {
+const GameIframe: React.FC<Game> = ({ src, title, logoSrc }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [isFullscreen, setIsFullscreen] = useState(false);
