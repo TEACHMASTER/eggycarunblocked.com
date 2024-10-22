@@ -31,7 +31,6 @@ const GameIframe: React.FC<Game> = ({ src, title, logoSrc }) => {
     setError('加载游戏时出错。请稍后再试。');
     setIsLoading(false);
   };
-
   return (
     <div className="flex justify-center isolate">
       <div ref={containerRef} className="relative w-3/4 h-0 pb-[45%]">
@@ -76,4 +75,9 @@ const GameIframe: React.FC<Game> = ({ src, title, logoSrc }) => {
   );
 };
 
+export async function getServerSideProps() {
+  return {
+    props: {},
+  };
+}
 export default GameIframe;
