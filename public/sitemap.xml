@@ -1,7 +1,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
     <url>
-        <loc>https://eggy-car-unblocked.com/</loc>
+        <loc>https://eggy-car-unblocked.com/fr</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://eggy-car-unblocked.com/en"/>
+        <priority>1.00</priority>
+    </url>
+    <url>
+        <loc>https://eggy-car-unblocked.com/en</loc>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://eggy-car-unblocked.com/fr"/>
         <priority>1.00</priority>
     </url>
 </urlset>
