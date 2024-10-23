@@ -1,10 +1,11 @@
 import React, { Fragment, useEffect, useState } from 'react';
 import Head from 'next/head';
 import GameIframe from '@/components/GameIframe';
-import { Article, Game } from '@/data/Data';
+import { Game } from '@/data/Data';
 import EggyCarDescription from '@/components/EggyCarDescription';
 import useTranslation from 'next-translate/useTranslation'
 import { useRouter } from 'next/router';
+import { GetServerSidePropsContext } from 'next';
 
 const Games: React.FC<{ game: Game }> = (props) => {
     const router = useRouter();
@@ -27,14 +28,19 @@ const Games: React.FC<{ game: Game }> = (props) => {
             </Head>
             <h1 className="text-4xl font-bold text-center text-yellow-600 mb-6">{t(`${gameName}.title`)}</h1>
             {game && <GameIframe src={game.src} title={t(`${gameName}.title`)} logoSrc={game.logoSrc} />}
-            {game && <EggyCarDescription obj={game} />}
+            <EggyCarDescription />
         </Fragment>
     );
 };
 
-export async function getServerSideProps() {
+export async function getServerSideProps(context: GetServerSidePropsContext) {
+    const {params } = context; 
+    const { gameName } = params as { gameName: string };    
     const baseUrl = process.env.NEXT_PUBLIC_HOST;
-    const game = await fetch(`${baseUrl}/api/games?gameName=eggycar`).then(res => res.json());
+    const game = await fetch(`${baseUrl}/api/games?gameName=${gameName}`).then(res => res.json());
+    if(!game.src){
+        return { notFound: true };
+    }
     return { props: { game } };
 }
 

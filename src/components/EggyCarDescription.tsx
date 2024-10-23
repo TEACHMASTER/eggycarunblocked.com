@@ -1,27 +1,28 @@
 import React, { Fragment } from 'react';
-import { Game } from '../data/Data';
+import {DescSection} from '../data/Data';
 import useTranslation from 'next-translate/useTranslation'
+import { useRouter } from 'next/router';
 
-const EggyCarDescription: React.FC<{ obj: Game }> = (props) => {
-    
+const EggyCarDescription: React.FC = () => {
+    const router = useRouter();
+    const { gameName } = router.query;
     const { t } = useTranslation('games')
-    const { obj } = props;
+
+    const desc: DescSection[] = t(`${gameName}.desc`, [], { returnObjects: true });
+
     return (
         <Fragment>
-            {obj && (
-                <div className="w-3/4 mx-auto p-6 bg-white rounded-lg shadow-md">
-                    {obj.desc?.map((item, index) => (
-                        <Fragment key={index}>
-                            <h2 className="text-2xl font-bold mb-4 text-yellow-600">{item.title}</h2>
-                            <p className="mb-6">{item.p}</p>
-                        </Fragment>
-                    ))}
-                    
-                    <p className="font-semibold text-lg text-center text-yellow-600">
-                        {obj.end}
-                    </p>
-                </div>
-            )}
+            <div className="w-3/4 mx-auto p-6 bg-white rounded-lg shadow-md">
+                {desc.map((section: any, index: number) => (
+                    <Fragment key={index}>
+                        <h2 className="text-2xl font-bold mb-4 text-yellow-600">{section.title}</h2>
+                        <p className="mb-6">{section.p}</p>
+                    </Fragment>
+                ))}
+                 <p className="font-semibold text-lg text-center text-yellow-600">
+                    {t(`${gameName}.end`)}
+                </p>
+            </div>
         </Fragment>
     );
 };

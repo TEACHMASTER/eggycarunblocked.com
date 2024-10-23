@@ -21,3 +21,8 @@ export interface Game {
   }[];
 }
 
+
+export interface DescSection {
+  title: string;
+  p: string;
+}
