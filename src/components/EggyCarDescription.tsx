@@ -1,7 +1,10 @@
 import React, { Fragment } from 'react';
 import { Game } from '../data/Data';
+import useTranslation from 'next-translate/useTranslation'
 
 const EggyCarDescription: React.FC<{ obj: Game }> = (props) => {
+    
+    const { t } = useTranslation('games')
     const { obj } = props;
     return (
         <Fragment>
