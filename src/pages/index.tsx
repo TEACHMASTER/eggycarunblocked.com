@@ -19,8 +19,8 @@ const Home: React.FC<{ game: Game }> = (props) => {
     return (
         <Fragment>
             <Head>
-                <title>{game?.title}</title>
-                <meta name="description" content={game?.description} />
+                <title>{t(`${gameName}.title`)}</title>
+                <meta name="description" content={t(`${gameName}.description`)} />
                 <link rel="canonical" href={`${process.env.NEXT_PUBLIC_HOST}`} />
             </Head>
 
