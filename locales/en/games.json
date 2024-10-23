@@ -1,31 +1,3 @@
 {
-  "eggycar":{
-        "title": "Eggy Car Game"
-        ,
-        "src": "https://webglmath.github.io/eggy-car/"
-        ,
-        "logoSrc":"https://webglmath.github.io/eggy-car/logo.png"
-        ,
-        "description":"Eggy Car Unblocked is a fun and challenging game where you drive a car made of eggs through an obstacle course, collecting eggs along the way.Get ready to experience thrilling adventures and enjoy extreme challenges, Eggy Car Unblocked will bring you more fun than ever before!"
-        ,
-        "desc":[
-            {
-                "title":"Eggy Car Unblocked",
-                "p":"Welcome to Eggy Car Unblocked, a fun and challenging game where you drive a car made from eggs! As you traverse the obstacle course, you can also collect eggs along the way and get ready for an egg-filled adventure!"
-            },
-            {
-                "title":"How to play Eggy Car Unblocked?",
-                "p":"On the keyboard, accelerate to the right or D forward and to the left or A backward. In the Eggy Car you should avoid collision with obstacles to prevent the egg cart from breaking. Your goal is to drive your egg cart as far as possible without breaking the Eggy."
-            },
-            {
-                "title":"What is the Eggy Car game?",
-                "p":"Eggy Car is a fun physics-based driving game. There are multiple levels of increasing difficulty, and you must use your car to transport fragile eggs as far as possible over bumpy roads. The challenge is to carefully control the speed and balance of the car to prevent the eggs from dropping and breaking. In Eggy Car you can also collect coins to upgrade your car as well as items to help you complete your journey. The Eggy Car is a simple and intuitive control for players of all skill levels Randomly generated levels are endlessly replayable The further you go, the higher your score, and Eggy Car is a fun and challenging game."
-            },
-            {
-                "title":"Eggy Car has it for you?",
-                "p":"Eggy Car can bring you a unique and quirky gaming experience, this is definitely the game for you. With its simple yet addictive gameplay and charming graphics, Eggy Car is sure to amaze you!"
-            }
-        ],
-        "end":"Start the game and see how far you can drive in the Eggy Car!"
-      }
+
 }
