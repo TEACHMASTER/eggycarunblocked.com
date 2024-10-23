@@ -58,7 +58,12 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
     const { gameName } = params as { gameName: string };    
     const baseUrl = process.env.NEXT_PUBLIC_HOST;
     const game = await fetch(`${baseUrl}/api/games?gameName=${gameName}`).then(res => res.json());
-    return { props: { game } };
+
+    const isGameValid = game && game.src && game.title;
+    if (!isGameValid) {
+        return { redirect: { destination: '/404', permanent: false } };
+    }
+    return { props: { game, isGameValid } };
 }
 
 export default Games;
