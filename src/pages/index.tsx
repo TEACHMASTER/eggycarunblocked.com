@@ -5,11 +5,11 @@ import { Game } from '@/data/Data';
 import EggyCarDescription from '@/components/EggyCarDescription';
 import useTranslation from 'next-translate/useTranslation'
 import { GetServerSidePropsContext } from 'next';
-
 const Home: React.FC<{ game: Game }> = (props) => {
     const  gameName  = 'eggycar';
     const [game, setGame] = useState<Game | undefined>(undefined);
     const { t } = useTranslation('shouye')
+
     useEffect(() => {
         if (props.game) {
             setGame(props.game);
@@ -21,7 +21,6 @@ const Home: React.FC<{ game: Game }> = (props) => {
             <Head>
                 <title>{t(`${gameName}.title`)}</title>
                 <meta name="description" content={t(`${gameName}.description`)} />
-                <link rel="canonical" href={`${process.env.NEXT_PUBLIC_HOST}`} />
             </Head>
 
             <h1 className="text-4xl font-bold text-center text-yellow-600 mb-6">{t(`${gameName}.title`)}</h1>
