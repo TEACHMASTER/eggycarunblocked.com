@@ -36,8 +36,6 @@ const Home: React.FC<{ game: Game }> = (props) => {
             <Description gameName={gameName} language="shouye" />
             
             {faqData.length > 0 && <FAQList list={faqData} />}
-
-            
         </Fragment>
     );
 };
