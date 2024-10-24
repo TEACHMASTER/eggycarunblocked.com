@@ -2,7 +2,7 @@ import React, { Fragment, useEffect, useState } from 'react';
 import Head from 'next/head';
 import GameIframe from '@/components/GameIframe';
 import { Game,DescSection } from '@/data/Data';
-import EggyCarDescription from '@/components/EggyCarDescription';
+import Description from '@/components/Description';
 import useTranslation from 'next-translate/useTranslation'
 import { useRouter } from 'next/router';
 import { GetServerSidePropsContext } from 'next';
@@ -46,7 +46,7 @@ const Games: React.FC<{ game: Game }> = (props) => {
                     />
                 </>
             )}
-            {descArray.length > 0 && <EggyCarDescription gameName={gameName as string} language="games"/>}
+            {descArray.length > 0 && <Description gameName={gameName as string} language="games"/>}
         </Fragment>
     );
 };

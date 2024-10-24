@@ -9,6 +9,7 @@ export interface Article {
   date: string;
 }
 
+// 定义游戏数据类型
 export interface Game {
   title: string;
   src: string;
@@ -21,8 +22,16 @@ export interface Game {
   }[];
 }
 
-
+// 定义描述数据类型
 export interface DescSection {
   title: string;
   p: string;
 }
+
+
+// 定义问题数据类型
+export type FAQItem = {
+    id: number;
+    question: string;
+    answer: string;
+};

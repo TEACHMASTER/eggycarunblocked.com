@@ -2,6 +2,7 @@
   "locales": ["en", "fr"],
   "defaultLocale": "en",
   "pages": {
+    "*": ["common"],
     "/": ["shouye"],
     "/[gameName]":["games"],
     "/[gameName]/[articleName]":["articles"]
