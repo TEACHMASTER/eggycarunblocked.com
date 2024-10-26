@@ -21,6 +21,18 @@
                 "p":"Eggy Car can bring you a unique and quirky gaming experience, this is definitely the game for you. With its simple yet addictive gameplay and charming graphics, Eggy Car is sure to amaze you!"
             }
         ],
+        "FAQ":[
+            {
+                "id":1,
+                "question":"How to play Eggy Car Unblocked?",
+                "answer":"On the keyboard, accelerate to the right or D forward and to the left or A backward."
+            },
+            {
+                "id":1,
+                "question":"How to play Eggy Car Unblocked?",
+                "answer":"On the keyboard, accelerate to the right or D forward and to the left or A backward."
+            }
+        ],
         "end":"Start the game and see how far you can drive in the Eggy Car!"
       }
 }
